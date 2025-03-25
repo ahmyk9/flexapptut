@@ -1,7 +1,14 @@
 <mvc:View controllerName="flexapptut.controller.App"
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:f="sap.f">
     <App id="app">
+    	<f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Solid">
+            <f:beginColumnPages>
+            	<!-- <mvc:XMLView id="beginView" viewName="sap.ui.demo.fcl.view.Master"/> -->
+            	<mvc:XMLView id="beginView" viewName="flexapptut.view.View1"></mvc:XMLView>
+            </f:beginColumnPages>
+        </f:FlexibleColumnLayout>
     </App>
 </mvc:View>

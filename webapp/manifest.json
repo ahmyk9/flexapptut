@@ -5,7 +5,7 @@
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
-      "version": "0.0.1"
+      "version": "1.0.0"
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
@@ -38,9 +38,13 @@
       "minUI5Version": "1.134.0",
       "libs": {
         "sap.m": {},
+        "sap.f": {},
         "sap.ui.core": {}
       }
     },
+    "config": {
+			"fullWidth": true
+		},
     "contentDensities": {
       "compact": true,
       "cozy": true
@@ -91,7 +95,6 @@
     "rootView": {
       "viewName": "flexapptut.view.App",
       "type": "XML",
-      "id": "App",
       "async": true
     }
   },

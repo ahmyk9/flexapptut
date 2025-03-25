@@ -4,7 +4,6 @@ sap.ui.define([
   "use strict";
 
   return BaseController.extend("flexapptut.controller.App", {
-      onInit() {
-      }
+	
   });
 });

@@ -1,26 +1,24 @@
 sap.ui.define([
-    "sap/ui/core/UIComponent",
-    "flexapptut/model/models"
-], (UIComponent, models) => {
-    "use strict";
+	'sap/ui/core/UIComponent',
+	'sap/ui/model/json/JSONModel'
+], function(UIComponent, JSONModel) {
+	'use strict';
 
-    return UIComponent.extend("flexapptut.Component", {
-        metadata: {
-            manifest: "json",
-            interfaces: [
-                "sap.ui.core.IAsyncContentCreation"
-            ]
-        },
+	return UIComponent.extend("flexapptut.controller.Component", {
 
-        init() {
-            // call the base component's init function
-            UIComponent.prototype.init.apply(this, arguments);
+		metadata: {
+			manifest: 'json'
+		},
 
-            // set the device model
-            this.setModel(models.createDeviceModel(), "device");
+		init: function () {
+			var oProductsModel;
 
-            // enable routing
-            this.getRouter().initialize();
-        }
-    });
+			UIComponent.prototype.init.apply(this, arguments);
+
+			// set products demo model on this sample
+			oProductsModel = new JSONModel('/model/products.json');
+			oProductsModel.setSizeLimit(1000);
+			this.setModel(oProductsModel, 'products');
+		}
+	});
 });
