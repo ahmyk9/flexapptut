@@ -35,10 +35,10 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.134.0",
+      "minUI5Version": "1.98.0",
       "libs": {
-        "sap.m": {},
         "sap.f": {},
+        "sap.m": {},
         "sap.ui.core": {},
         "sap.uxap": {}
       }
@@ -74,6 +74,7 @@
         "viewPath": "flexapptut.view",
         "controlId": "flexibleColumnLayout",
         "transition": "slide",
+        "bypassed": {},
         "async": true
       },
       "routes": [
@@ -92,6 +93,15 @@
             "view1",
             "detail"
           ]
+        },
+        {
+          "pattern": "detail/{product}/detailDetail/{supplier}/{layout}",
+          "name": "detailDetail",
+          "target": [
+            "view1",
+            "detail",
+            "detailDetail"
+          ]
         }
       ],
       "targets": {
@@ -102,6 +112,10 @@
         "detail": {
           "name": "Detail",
           "controlAggregation": "midColumnPages"
+        },
+        "detailDetail": {
+          "name": "DetailDetail",
+          "controlAggregation": "endColumnPages"
         }
       }
     },

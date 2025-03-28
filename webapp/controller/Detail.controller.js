@@ -1,9 +1,10 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	'sap/f/library'
+], function (Controller, fioriLibrary) {
 	"use strict";
 
-	return Controller.extend("flexapptut.controller.App", {
+	return Controller.extend("flexapptut.controller.Detail", {
 		onInit: function () {
 			var oOwnerComponent = this.getOwnerComponent();
 
@@ -12,6 +13,14 @@ sap.ui.define([
 
 			this.oRouter.getRoute("view1").attachPatternMatched(this._onProductMatched, this);
 			this.oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
+			this.oRouter.getRoute("detailDetail").attachPatternMatched(this._onProductMatched, this);
+		},
+
+		onSupplierPress: function (oEvent) {
+			var supplierPath = oEvent.getSource().getBindingContext("products").getPath(),
+				supplier = supplierPath.split("/").slice(-1).pop();
+
+			this.oRouter.navTo("detailDetail", {layout: fioriLibrary.LayoutType.ThreeColumnsMidExpanded, supplier: supplier, product: this._product});
 		},
 
 		_onProductMatched: function (oEvent) {
