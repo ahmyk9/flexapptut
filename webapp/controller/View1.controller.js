@@ -8,33 +8,34 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("flexapptut.controller.View1", {
-		onInit: function () {
-			this.oView = this.getView();
-			this._bDescendingSort = false;
-			this.oProductsTable = this.oView.byId("productsTable");
-		},
-
-		onSearch: function (oEvent) {
-			var oTableSearchState = [],
-				sQuery = oEvent.getParameter("query");
-
-			if (sQuery && sQuery.length > 0) {
-				oTableSearchState = [new Filter("Name", FilterOperator.Contains, sQuery)];
+		
+			onInit: function () {
+				this.oView = this.getView();
+				this._bDescendingSort = false;
+				this.oProductsTable = this.oView.byId("productsTable");
+			},
+	
+			onSearch: function (oEvent) {
+				var oTableSearchState = [],
+					sQuery = oEvent.getParameter("query");
+	
+				if (sQuery && sQuery.length > 0) {
+					oTableSearchState = [new Filter("Name", FilterOperator.Contains, sQuery)];
+				}
+	
+				this.oProductsTable.getBinding("items").filter(oTableSearchState, "Application");
+			},
+	
+			onAdd: function () {
+				MessageBox.information("This functionality is not ready yet.", {title: "Aw, Snap!"});
+			},
+	
+			onSort: function () {
+				this._bDescendingSort = !this._bDescendingSort;
+				var oBinding = this.oProductsTable.getBinding("items"),
+					oSorter = new Sorter("Name", this._bDescendingSort);
+	
+				oBinding.sort(oSorter);
 			}
-
-			this.oProductsTable.getBinding("items").filter(oTableSearchState, "Application");
-		},
-
-		onAdd: function () {
-			MessageBox.information("This functionality is not ready yet.", {title: "Aw, Snap!"});
-		},
-
-		onSort: function () {
-			this._bDescendingSort = !this._bDescendingSort;
-			var oBinding = this.oProductsTable.getBinding("items"),
-				oSorter = new Sorter("Name", this._bDescendingSort);
-
-			oBinding.sort(oSorter);
-		}
-	});
+		});
 });

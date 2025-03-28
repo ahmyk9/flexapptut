@@ -6,7 +6,6 @@
     <App id="app">
     	<f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Solid">
             <f:beginColumnPages>
-            	<!-- <mvc:XMLView id="beginView" viewName="sap.ui.demo.fcl.view.Master"/> -->
             	<mvc:XMLView id="beginView" viewName="flexapptut.view.View1"></mvc:XMLView>
             </f:beginColumnPages>
         </f:FlexibleColumnLayout>

@@ -2,10 +2,9 @@
 
 <mvc:View
 	controllerName="flexapptut.controller.View1"
-	xmlns="sap.m"
+		xmlns="sap.m"
 	xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc">
-    <Page id="page" title="{i18n>title}">
 	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
 		<!-- DynamicPage Title -->
 		<f:title>
@@ -74,5 +73,4 @@
 			</OverflowToolbar>
 		</f:footer>
 	</f:DynamicPage>
-    </Page>
 </mvc:View>
