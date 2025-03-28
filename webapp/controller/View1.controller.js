@@ -45,5 +45,5 @@ sap.ui.define([
 
 			this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, product: product});
 		}
-		});
+	});
 });

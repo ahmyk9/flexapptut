@@ -22,6 +22,7 @@ sap.ui.define([
 			oModel = new JSONModel();
 			this.setModel(oModel);
 
+			// set products demo model on this sample
 			oProductsModel = new JSONModel('/model/products.json');
 			oProductsModel.setSizeLimit(1000);
 			this.setModel(oProductsModel, 'products');
