@@ -1,5 +1,3 @@
-
-
 <mvc:View
 	controllerName="flexapptut.controller.View1"
 	xmlns="sap.m"

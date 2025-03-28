@@ -39,12 +39,13 @@
       "libs": {
         "sap.m": {},
         "sap.f": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.uxap": {}
       }
     },
     "config": {
-			"fullWidth": true
-		},
+      "fullWidth": true
+    },
     "contentDensities": {
       "compact": true,
       "cozy": true
@@ -66,36 +67,49 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
+        "routerClass": "sap.f.routing.Router",
         "type": "View",
         "viewType": "XML",
         "path": "flexapptut.view",
-        "async": true,
-        "viewPath": "flexapptut.view"
+        "viewPath": "flexapptut.view",
+        "controlId": "flexibleColumnLayout",
+        "transition": "slide",
+        "async": true
       },
       "routes": [
         {
-          "name": "RouteView1",
-          "pattern": ":?query:",
+          "pattern": ":layout:",
+          "name": "view1",
           "target": [
-            "TargetView1"
+            "view1",
+            "detail"
+          ]
+        },
+        {
+          "pattern": "detail/{product}/{layout}",
+          "name": "detail",
+          "target": [
+            "view1",
+            "detail"
           ]
         }
       ],
       "targets": {
-        "TargetView1": {
-          "id": "View1",
-          "name": "View1"
+        "view1": {
+          "name": "View1",
+          "controlAggregation": "beginColumnPages"
+        },
+        "detail": {
+          "name": "Detail",
+          "controlAggregation": "midColumnPages"
         }
       }
     },
     "rootView": {
       "viewName": "flexapptut.view.App",
       "type": "XML",
-      "async": true
+      "async": true,
+      "id": "fcl"
     }
   },
   "sap.cloud": {
