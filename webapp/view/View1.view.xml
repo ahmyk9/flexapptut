@@ -2,7 +2,7 @@
 
 <mvc:View
 	controllerName="flexapptut.controller.View1"
-		xmlns="sap.m"
+	xmlns="sap.m"
 	xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc">
 	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
@@ -44,7 +44,7 @@
 						</Column>
 					</columns>
 					<items>
-						<ColumnListItem type="Navigation">
+						<ColumnListItem type="Navigation" press=".onListItemPress">
 							<cells>
 								<ObjectIdentifier title="{products>Name}" text="{products>ProductId}"/>
 								<ObjectNumber

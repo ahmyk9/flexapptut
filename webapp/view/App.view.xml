@@ -8,6 +8,10 @@
             <f:beginColumnPages>
             	<mvc:XMLView id="beginView" viewName="flexapptut.view.View1"></mvc:XMLView>
             </f:beginColumnPages>
+            <f:midColumnPages>
+                <!-- <mvc:XMLView id="beginView" viewName="flexapptut.view.View1"></mvc:XMLView> -->
+            	<mvc:XMLView id="detailView" viewName="flexapptut.view.Detail"/>
+            </f:midColumnPages>
         </f:FlexibleColumnLayout>
     </App>
 </mvc:View>
